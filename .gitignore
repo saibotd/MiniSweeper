@@ -1,3 +1,5 @@
 /node_modules
 /web/js
 /web/css
+/web/*.js
+/web/*.js.map

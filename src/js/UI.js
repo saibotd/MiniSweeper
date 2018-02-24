@@ -47,6 +47,7 @@ export default class UI extends React.Component{
             face: sample(this.faces.idle),
             showDead: false,
             showWin: false,
+            gameNum: 0,
             score: 0
         };
     }
@@ -70,7 +71,7 @@ export default class UI extends React.Component{
         this.setState({ level: this.state.level+1, face: sample(this.faces.idle), showWin: false });
     }
     handleRetryClick = ()=>{
-        this.setState({ level: 0, face: sample(this.faces.idle), showDead: false, score: 0 });
+        this.setState({ level: 0, face: sample(this.faces.idle), showDead: false, score: 0, gameNum: this.state.gameNum+1 });
     }
     render(){
         let message;
@@ -98,7 +99,7 @@ export default class UI extends React.Component{
                 <div className="bombs">💣x{ numBombs }</div>
             </div>
             <Game
-            key={ 'game-' + this.state.level }
+            key={ 'game-' + this.state.level + '-' + this.state.gameNum }
             autoPlay={ false }
             width={ 4 }
             height={ 5 }

@@ -65,7 +65,7 @@ jsConfig.module.rules.push({
 
 const js2Config = _.cloneDeep(config);
 js2Config.entry = './src/js/sw.js';
-js2Config.output.filename = 'js/sw.js';
+js2Config.output.filename = 'sw.js';
 js2Config.module.rules.push({
     test: /\.js$/,
     exclude: /node_modules/,
