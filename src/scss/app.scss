@@ -1,0 +1,110 @@
+html, body{
+    margin: 0;
+}
+
+body{
+    font-family: 'Fredoka+One', cursive;
+    color: #FFF;
+    background: linear-gradient(135deg, #9326ff 0%,#ff9326 100%);
+    min-height: 100vh;
+}
+
+.top{
+    text-align: center;
+    margin: 20px 40px;
+    .face{
+        display: inline-block;
+        margin: 0 auto;
+        font-size: 8vw;
+    }
+    .score{
+        width: 50px;
+        margin-top: 10px;
+        float: left;
+    }
+    .bombs{
+        width: 50px;
+        margin-top: 10px;
+        float: right;
+    }
+}
+
+.playfield{
+    text-align: center;
+    .row{
+        white-space: nowrap;
+        .field{
+            transition: all .3s ease-in-out;
+            color: rgba(176, 224, 230, .8);
+            width: 120px;
+            height: 120px;
+            margin: 7.5px 10px;
+            text-align: center;
+            display: inline-block;
+            overflow: hidden;
+            outline: solid rgba(255,255,255,.3) 5px;
+            &.field-0,
+            &.field-1,
+            &.field-2,
+            &.field-3,
+            &.field-4,
+            &.field-5,
+            &.field-6,
+            &.field-7,
+            &.field-8{
+                background: rgba(255,255,255,.3);
+                >span{
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+            &.field-0,
+            &.field--1,
+            &.field--2{
+                >span{
+                    opacity: 0;
+                    transform: scale(0);
+                }
+            }
+            &.field--3{
+                transform: scale(1.4);
+                outline-width: 0;
+            }
+            >span{
+                display: flex;
+                transition: all .3s ease-in-out;
+                font-size: 8vw;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+button{
+    border: 4px solid #FFF;
+    font-family: 'Fredoka+One', cursive;
+    background: transparent;
+    color: #FFF;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.message{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    > div{
+        margin: auto;
+        margin-bottom: 0;
+        padding: 30px;
+        background: #26ff93;
+        text-align: center;
+        width: 100vw;
+    }
+}
