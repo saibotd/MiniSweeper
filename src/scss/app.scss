@@ -3,7 +3,7 @@ html, body{
 }
 
 body{
-    font-family: 'Fredoka+One', cursive;
+    font-family: 'Fredoka One', sans-serif;
     color: #FFF;
     background: linear-gradient(135deg, #9326ff 0%,#ff9326 100%);
     min-height: 100vh;
@@ -85,7 +85,7 @@ body{
 
 button{
     border: 4px solid #FFF;
-    font-family: 'Fredoka+One', cursive;
+    font-family: 'Fredoka One', sans-serif;
     background: transparent;
     color: #FFF;
     padding: 10px 20px;
@@ -96,12 +96,12 @@ button{
     position: fixed;
     left: 0;
     top: 0;
+    bottom: 0;
     width: 100vw;
-    height: 100vh;
     display: flex;
     > div{
         margin: auto;
-        margin-bottom: 0;
+        margin-bottom: 20px;
         padding: 30px;
         background: #26ff93;
         text-align: center;

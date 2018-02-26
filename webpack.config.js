@@ -11,7 +11,12 @@ const config = {
         publicPath: '/'
     },
     module: {
-        rules: []
+        rules: [
+            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, 'include': path.join(__dirname, 'src/fonts'), loader: {
+                loader: 'file-loader',
+                options: {outputPath: 'fonts', publicPath: '../fonts/'}
+            } }
+        ]
     },
     stats: {
         colors: true

@@ -15,7 +15,7 @@ Field:
 
 export default class Game extends React.Component{
     timeout;
-    bombs = ['💣', '💣', '💣', '💣', '💣', '💣', '👊', '💥', '💩', '💔', '🥦'];
+    bombs = ['💣', '💣', '💣', '💣', '💣', '💣','💣','💣','💣','💣','💣', '👊', '💥', '💩'];
     constructor(props, context){
         super(props, constructor);
         this.state = {
