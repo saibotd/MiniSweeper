@@ -1,5 +1,5 @@
 {
-    "main": "web/app.php",
+    "main": "web/index.html",
     "scripts": {
         "dev": "node_modules/.bin/cross-env NODE_ENV=development node_modules/.bin/webpack --progress --hide-modules",
         "watch": "node_modules/.bin/cross-env NODE_ENV=development node_modules/.bin/webpack --watch --progress --hide-modules",
