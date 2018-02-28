@@ -69,33 +69,9 @@ export default class UI extends React.Component{
     }
     handleNextClick = ()=>{
         this.setState({ level: this.state.level+1, face: sample(this.faces.idle), showWin: false });
-        this.askToInstall();
     }
     handleRetryClick = ()=>{
         this.setState({ level: 0, face: sample(this.faces.idle), showDead: false, score: 0, gameNum: this.state.gameNum+1 });
-    }
-    askToInstall(){
-        if(window.deferredPrompt !== undefined) {
-            // The user has had a positive interaction with our app and Chrome
-            // has tried to prompt previously, so let's show the prompt.
-            window.deferredPrompt.prompt();
-            
-            // Follow what the user has done with the prompt.
-            window.deferredPrompt.userChoice.then(function(choiceResult) {
-                
-                console.log(choiceResult);
-                
-                if(choiceResult.outcome == 'dismissed') {
-                    console.log('User cancelled home screen install');
-                }
-                else {
-                    console.log('User added to home screen');
-                }
-                
-                // We no longer need the prompt.  Clear it up.
-                window.deferredPrompt = undefined;
-            });
-        }
     }
     render(){
         let message;
