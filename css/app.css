@@ -1,1 +1,74 @@
-body,html{margin:0}body{font-family:Fredoka One,sans-serif;color:#fff;background:linear-gradient(135deg,#9326ff,#ff9326);min-height:100vh}.top{text-align:center;margin:20px 40px}.top .face{display:inline-block;margin:0 auto;font-size:8vw}.top .score{float:left}.top .bombs,.top .score{width:50px;margin-top:10px}.top .bombs{float:right}.playfield{text-align:center}.playfield .row{white-space:nowrap}.playfield .row .field{transition:all .3s ease-in-out;color:rgba(176,224,230,.8);width:120px;height:120px;margin:7.5px 10px;text-align:center;display:inline-block;overflow:hidden;outline:5px solid hsla(0,0%,100%,.3)}.playfield .row .field.field-0,.playfield .row .field.field-1,.playfield .row .field.field-2,.playfield .row .field.field-3,.playfield .row .field.field-4,.playfield .row .field.field-5,.playfield .row .field.field-6,.playfield .row .field.field-7,.playfield .row .field.field-8{background:hsla(0,0%,100%,.3)}.playfield .row .field.field-0>span,.playfield .row .field.field-1>span,.playfield .row .field.field-2>span,.playfield .row .field.field-3>span,.playfield .row .field.field-4>span,.playfield .row .field.field-5>span,.playfield .row .field.field-6>span,.playfield .row .field.field-7>span,.playfield .row .field.field-8>span{opacity:1;transform:scale(1)}.playfield .row .field.field-0>span,.playfield .row .field.field--1>span,.playfield .row .field.field--2>span{opacity:0;transform:scale(0)}.playfield .row .field.field--3{transform:scale(1.4);outline-width:0}.playfield .row .field>span{display:flex;transition:all .3s ease-in-out;font-size:8vw;height:100%;width:100%;align-items:center;justify-content:center}button{border:4px solid #fff;font-family:Fredoka One,sans-serif;background:transparent;color:#fff;padding:10px 20px;font-size:16px}.message{position:fixed;left:0;top:0;bottom:0;width:100vw;display:flex}.message>div{margin:auto;margin-bottom:20px;padding:30px;background:#26ff93;text-align:center;width:100vw}
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: ENOENT: no such file or directory, open '/home/saibotd/Projects/MiniSweeper/src/scss/app.scss'\n    at runLoaders (/home/saibotd/Projects/MiniSweeper/node_modules/webpack/lib/NormalModule.js:195:19)\n    at /home/saibotd/Projects/MiniSweeper/node_modules/loader-runner/lib/LoaderRunner.js:364:11\n    at /home/saibotd/Projects/MiniSweeper/node_modules/loader-runner/lib/LoaderRunner.js:200:19\n    at /home/saibotd/Projects/MiniSweeper/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:70:14\n    at process._tickCallback (internal/process/next_tick.js:150:11)");
+
+/***/ })
+/******/ ]);
+/*# sourceMappingURL=app.css.map*/
