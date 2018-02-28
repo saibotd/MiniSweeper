@@ -2,6 +2,5 @@
 
 yarn production
 git checkout gh-pages
-mv ./web/* ./
-rm -rf ./web
+cp -r ./web/* ./
 git status
