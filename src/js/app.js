@@ -18,7 +18,7 @@ if ('serviceWorker' in navigator) {
     
     window.addEventListener('beforeinstallprompt', function(e) {
         // beforeinstallprompt Event fired
-        
+        e.prompt();
         // e.userChoice will return a Promise.
         // For more details read: https://developers.google.com/web/fundamentals/getting-started/primers/promises
         e.userChoice.then(function(choiceResult) {
