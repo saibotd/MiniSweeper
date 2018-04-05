@@ -76,7 +76,7 @@ export default class Game extends React.Component{
         this.props.onChange({ state: 'bombs_placed' });
         return playfield;
     }
-    countAround(x,y, func=(val)=>{ return val <= -2 } ){
+    countAround(x, y, playfield = this.state.playfield, func=(val)=>{ return val <= -2 }){
         let num = 0;
         let pos = [];
         for(let _x = x-1 >= 0 ? x-1 : 0; _x <= (x+1 < this.props.width ? x+1 : this.props.width-1); _x++){
@@ -98,7 +98,7 @@ export default class Game extends React.Component{
 
         switch(v){
             case -1:
-                playfield[y][x] = this.countAround(x,y).num;
+                playfield[y][x] = this.countAround(x, y, playfield).num;
                 this.props.onChange({ state: 'move', score: playfield[y][x] + 1 });
             break;
             case -2:
@@ -127,7 +127,7 @@ export default class Game extends React.Component{
         this.state.playfield.forEach((row, y)=>{
             return row.forEach((col, x)=>{
                 if(col == 0){
-                    uncovers = uncovers.concat(this.countAround(x,y, (val)=>{ return val == -1 }).pos);
+                    uncovers = uncovers.concat(this.countAround(x, y, this.state.playfield, (val)=>{ return val == -1 }).pos);
                 }
                 if(col >= 0) uncovered++;
                 if(col == -3) bombs++;
