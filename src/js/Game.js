@@ -62,19 +62,19 @@ export default class Game extends React.Component{
             this.setState({ locked: false, bombsPlaced: false });
         }
     }
-    placeBombs(){
+    placeBombs(x = 0, y = 0){
         const playfield = this.state.playfield;
         let bombsPlaced = 0;
         while(bombsPlaced < this.props.bombs){
             const randY = Math.floor(Math.random()*this.props.height);
             const randX = Math.floor(Math.random()*this.props.width);
-            if(playfield[randY][randX] == -1){
-                playfield[randY][randX]--;
-                bombsPlaced++;
-            }
+            if(randY == y && randX == x) continue;
+            playfield[randY][randX] = -2;
+            bombsPlaced++;
         }
         this.setState({ playfield, bombsPlaced });
         this.props.onChange({ state: 'bombs_placed' });
+        return playfield;
     }
     countAround(x,y, func=(val)=>{ return val <= -2 } ){
         let num = 0;
@@ -91,10 +91,11 @@ export default class Game extends React.Component{
     }
     handleFieldClick = (x, y, v)=>{
         if(this.state.locked) return;
+        let playfield = this.state.playfield;
         if(!this.state.bombsPlaced){
-            this.placeBombs();
+            playfield = this.placeBombs();
         }
-        const playfield = this.state.playfield;
+
         switch(v){
             case -1:
                 playfield[y][x] = this.countAround(x,y).num;
@@ -104,7 +105,7 @@ export default class Game extends React.Component{
                 playfield[y][x] = -3;
                 this.setState({ locked: true });
                 //window.setTimeout(()=> this.setState({ locked: true }), 30);
-                this.state.playfield.forEach((row, _y)=>{
+                playfield.forEach((row, _y)=>{
                     return row.forEach((col, _x)=>{
                         if(col == -2) playfield[_y][_x] = -3;
                     });
