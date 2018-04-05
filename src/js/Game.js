@@ -72,7 +72,7 @@ export default class Game extends React.Component{
             playfield[randY][randX] = -2;
             bombsPlaced++;
         }
-        this.setState({ playfield, bombsPlaced });
+        this.setState({ bombsPlaced });
         this.props.onChange({ state: 'bombs_placed' });
         return playfield;
     }
@@ -81,7 +81,7 @@ export default class Game extends React.Component{
         let pos = [];
         for(let _x = x-1 >= 0 ? x-1 : 0; _x <= (x+1 < this.props.width ? x+1 : this.props.width-1); _x++){
             for(let _y = y-1 >= 0 ? y-1 : 0; _y <= (y+1 < this.props.height ? y+1 : this.props.height-1); _y++){
-                if(func(this.state.playfield[_y][_x])){
+                if(func(playfield[_y][_x])){
                     num++;
                     pos.push([_x,_y]);
                 }
@@ -94,6 +94,7 @@ export default class Game extends React.Component{
         let playfield = this.state.playfield;
         if(!this.state.bombsPlaced){
             playfield = this.placeBombs();
+            playfield[y][x] = 0;
         }
 
         switch(v){
@@ -144,7 +145,7 @@ export default class Game extends React.Component{
         if(bombs > 0) return;
         const playfield = this.state.playfield;
         const pos = uncovers[Math.floor(Math.random()*uncovers.length)];
-        playfield[pos[1]][pos[0]] = this.countAround(pos[0],pos[1]).num;
+        playfield[pos[1]][pos[0]] = this.countAround(pos[0],pos[1],playfield).num;
         this.props.onChange({ score: playfield[pos[1]][pos[0]] + 1 });
         this.setState({ playfield });
         this.tick();
